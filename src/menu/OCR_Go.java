@@ -28,7 +28,7 @@ import javax.imageio.ImageIO;
  */
 public class OCR_Go {
      final private static String imagepath = "/home/roy/picP/newBW/";
-     final private static String fileName = "Roman";
+     final private static String fileName = "text";
      final private static String filetype = ".jpg";
      private static String fileString(int num){
          return  imagepath+fileName+num+filetype;

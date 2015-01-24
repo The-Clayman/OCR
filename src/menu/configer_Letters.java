@@ -28,7 +28,7 @@ import javax.imageio.ImageIO;
 public class configer_Letters {
 
     final private static String imagepath = "/home/roy/picP/newBW/";
-    final private static String fileName = "Hello";
+    final private static String fileName = "abc";
     final private static String filetype = ".jpg";
 
     private static String fileString(int num) {
