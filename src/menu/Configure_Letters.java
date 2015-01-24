@@ -25,7 +25,7 @@ import javax.imageio.ImageIO;
  *
  * @author roy
  */
-public class configer_Letters {
+public class Configure_Letters {
 
     final private static String imagepath = "/home/roy/picP/newBW/";
     final private static String fileName = "abc";
