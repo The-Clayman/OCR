@@ -50,12 +50,12 @@ public class OCR_Go {
             BufferedImage work;
 
             BufferedImage sub;
-            negetive = Bw.BW(original, fileString(2), 130, 2, 0.5);
+            negetive = Bw.BW(original, fileString(2), 130, 1, 0.5);// other threshold  negetive = Bw.BW(original, fileString(2), 130, 2, 0.5);
             Bw.NumOfColors(negetive);
             work = Bw.BW(original, fileString(1), 130, 0, 0.5);
             Bw.con(original, fileString(2));
             GameOfLife gol = new GameOfLife();
-            gol.GOL(negetive, fileString(3), D, 1 , 1);
+            gol.GOL(negetive, fileString(3), D, 1 , 1);//can be gol.GOL(negetive,fileString(3), D, 1, 5);
             D.mergeAllOver();
             Test.Rects(fileString(1), fileString(4), D.Rects);
             RecLineCol recline = new RecLineCol();
