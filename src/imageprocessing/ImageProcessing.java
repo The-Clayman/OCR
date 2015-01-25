@@ -42,7 +42,7 @@ public class ImageProcessing {
             work = Bw.BW(original, "/home/roy/picP/newBW/Hello1.jpg", 130, 0, 0.5);
             Bw.con(original, "/home/roy/picP/newBW/Hello2.jpg");
             GameOfLife gol = new GameOfLife();
-            gol.GOL(negetive, "/home/roy/picP/newBW/Hello3.jpg", D, 1);
+            gol.GOL(negetive, "/home/roy/picP/newBW/Hello3.jpg", D, 1 , 0);
 
             D.growAll(15, 15);
             D.mergeAll();

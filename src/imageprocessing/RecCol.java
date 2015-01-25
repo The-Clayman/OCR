@@ -50,10 +50,10 @@ public class RecCol {
         return ans;
     }
 
-    public boolean isInAll(int i, int j) {
+    public boolean isInAll(int i, int j , int returnDistThreshold) {
         boolean ans = false;
         for (int z = 0; !ans && z < this.Rects.size(); z++) {
-            if (this.Rects.elementAt(z).isInOne(i, j)) {
+            if (this.Rects.elementAt(z).isInOne(i, j ,returnDistThreshold)) {
                 ans = true;
             }
 

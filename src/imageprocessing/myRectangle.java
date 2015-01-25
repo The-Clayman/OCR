@@ -71,9 +71,9 @@ public class myRectangle extends Rectangle {
         return this.lowY;
     }
 
-    public boolean isInOne(int i, int j) {
+    public boolean isInOne(int i, int j , int returnDistThreshold) {
         boolean ans = false;
-        if (i >= this.x && i <= this.lowX && j >= this.y && j <= this.lowY) {
+        if (i >= (this.x-returnDistThreshold) && i <= (this.lowX+returnDistThreshold) && j >= (this.y-returnDistThreshold) && j <= (this.lowY+returnDistThreshold)) {
             ans = true;
         }
         return ans;
