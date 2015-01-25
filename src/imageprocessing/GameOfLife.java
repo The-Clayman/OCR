@@ -25,7 +25,7 @@ public class GameOfLife {
     public GameOfLife(){};
     
     
-    public  void GOL(BufferedImage original, String PicDest, RecCol D , int threshold) {
+    public  void GOL(BufferedImage original, String PicDest, RecCol D , int threshold, int returnDistThreshold) {
         try {
             int red;
             boolean white = false;
@@ -41,10 +41,10 @@ public class GameOfLife {
                         white = false;
 
                     } else {
-                        if (!D.isInAll(i, j)) {
+                        if (!D.isInAll(i, j , returnDistThreshold )) {
                             white = true;
                             myRectangle temp;
-                            temp = BuildRec(i, j, original , threshold);
+                            temp = BuildRec(i, j, original , threshold,returnDistThreshold);
                             D.add(temp);
                         }
 
@@ -61,7 +61,7 @@ public class GameOfLife {
         }
     }
 
-    private myRectangle BuildRec(int i, int j, BufferedImage pic , int threshold) {
+    private myRectangle BuildRec(int i, int j, BufferedImage pic , int threshold , int returnDistThreshold) {
         boolean go = true;
         int minI = i;
         int minJ = j;
@@ -73,6 +73,7 @@ public class GameOfLife {
 
         myRectangle ans = new myRectangle();
         ans.SetAll(i, j, i, j);
+        int runningCounter = 0;
         
        //chacking block, printing circles for tracking, need to be disabled. 
       //  Graphics2D g = pic.createGraphics();
@@ -80,6 +81,7 @@ public class GameOfLife {
         
         
         while (go) {
+            runningCounter ++;
             
             
         //    g.fillOval(i, j, 10, 10);// for testing
@@ -136,11 +138,13 @@ public class GameOfLife {
             }
             if (j > maxJ) {
                 maxJ = j;
-            }
-           if (i == iniI && j == iniJ) {
+            } 
+            if (runningCounter > returnDistThreshold && Math.abs(i-iniI) <= returnDistThreshold && Math.abs(j-iniJ) <= returnDistThreshold) {
            // if (j>=iniJ){
                 go = false;
             }
+            if (i == iniI && j == iniJ)
+                go = false;
             
 
         }
